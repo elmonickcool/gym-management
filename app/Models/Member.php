@@ -12,5 +12,10 @@ class Member extends Model
         'name',
         'email',
         'membership_expiration',
+        'trainer_id',
     ];
+    public function trainer()
+    {
+        return $this->belongsTo(Trainer::class);
+    }
 }

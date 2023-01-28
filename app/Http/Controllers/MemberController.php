@@ -43,4 +43,10 @@ class MemberController extends Controller
         return redirect()->route('member.index')->with('success', 'Member is successfully deleted!');
     }
 
+    public function show(Request $request)
+    {
+        $member = Member::findOrFail($request->id);
+        return view('show')->with('member', $member);
+    }
+
 }
