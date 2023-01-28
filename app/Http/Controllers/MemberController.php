@@ -25,6 +25,8 @@ class MemberController extends Controller
         $member->email = $request->email;
         $member->membership_expiration = $request->membership_expiration;
         $member->save();
+
+        return redirect()->route('member.index')->with('success', 'New members added');
     }
 
     public function edit(Request $request)
