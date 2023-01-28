@@ -27,4 +27,18 @@ class MemberController extends Controller
         $member->save();
     }
 
+    public function edit(Request $request)
+    {
+        $member = Member::findorFail($request->id);
+        return view('edit')
+            ->with('member', $member);
+    }
+
+    public function destroy(Request $request)
+    {
+        $member= Member::findorFail($request->id);
+        $member->delete();
+        return redirect()->route('index')->with('success', 'Member is successfully deleted!');
+    }
+
 }
