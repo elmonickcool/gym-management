@@ -22,7 +22,8 @@
         <div class="container m-5 p-5 border border-dark">
         <h1>Gym Membership Form  💪🏻</h1>
 
-  <form>
+  <form action="{{ route('member.store') }}" method="POST">
+    @csrf
      <div class="mb-3">
                     <label for="name" class="form-label">Name</label>
                     <input type="text" class="form-control" id="name" name="name" required>

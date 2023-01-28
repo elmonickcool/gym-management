@@ -18,4 +18,5 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/createmember', [MemberController::class, 'create'])->name('createmember');
+Route::get('/createmember', [MemberController::class, 'create'])->name('member.create');
+Route::post('/createmember', [MemberController::class, 'store'])->name('member.store');
