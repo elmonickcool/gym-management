@@ -40,7 +40,7 @@ class MemberController extends Controller
     {
         $member= Member::findorFail($request->id);
         $member->delete();
-        return redirect()->route('index')->with('success', 'Member is successfully deleted!');
+        return redirect()->route('member.index')->with('success', 'Member is successfully deleted!');
     }
 
 }

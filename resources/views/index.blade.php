@@ -44,8 +44,30 @@
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
-        </form>
-
+    </div>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Member</th>
+                    <th>Email</th>
+                    <th>Expiration Date</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($members as $member)
+                <tr>
+                    <td>{{$member->name}}</td>
+                    <td>{{$member->email}}</td>
+                    <td>{{$member->membership_expiration}}</td>
+                    <td> <button class="btn btn-primary">Edit</button> <form action={{ route('member.destroy', $member->id) }} method="POST">
+                                        @csrf
+                                        <button class="btn btn-danger">Delete</button>
+                                    </form></td>
+                </tr>
+               @endforeach
+            </tbody>
+        </table>
 
 </body>
 

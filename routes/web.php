@@ -17,3 +17,4 @@ use App\Http\Controllers\MemberController;
 Route::get('/', [MemberController::class, 'index'])->name('member.index');
 Route::get('/create', [MemberController::class, 'create'])->name('member.create');
 Route::post('/create', [MemberController::class, 'store'])->name('member.store');
+Route::post('/{id}/destroy', [MemberController::class, 'destroy'])->name('member.destroy');
